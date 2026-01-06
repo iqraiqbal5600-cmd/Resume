@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pizza Hut Website</title>
+
+<style>
+body{
+  font-family: Arial;
+  background:#0f0f0f;
+  color:#fff;
+  margin:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+/* HEADER */
+header{
+  background:#000;
+  padding:16px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.logo{
+  color:#ff3b3b;
+  font-size:22px;
+  font-weight:bold;
+}
+
+nav a{
+  color:#fff;
+  margin:0 10px;
+  text-decoration:none;
+}
+
+nav a:hover{
+  color:#ff3b3b;
+}
+
+/* SLIDER / HOME */
+.slider{
+  width:100%;
+  height:360px;
+  overflow:hidden;
+  position:relative;
+}
+
+.slider img{
+  width:100%;
+  height:360px;
+  object-fit:cover;
+  position:absolute;
+  opacity:0;
+  transition:1s;
+  border-bottom:4px solid #ff3b3b;
+}
+
+.slider img.active{
+  opacity:1;
+}
+
+/* SECTION */
+section{
+  padding:30px;
+}
+
+h2{
+  color:#ff3b3b;
+  margin-bottom:10px;
+}
+
+/* GRID */
+.food-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.food-card{
+  background:#181818;
+  border-radius:12px;
+  padding:14px;
+  text-align:center;
+  transition:.4s;
+  border:2px solid transparent;
+}
+
+/* HOVER ANIMATION */
+.food-card:hover{
+  transform:translateY(-6px) scale(1.02);
+  border:2px solid #ff3b3b;
+  box-shadow:0 6px 18px rgba(255,0,0,.4);
+}
+
+.food-card h3{
+  color:#ff3b3b;
+}
+
+.food-card img{
+  width:100%;
+  height:220px;
+  border-radius:10px;
+  object-fit:cover;
+}
+
+/* BUTTON */
+.btn{
+  display:inline-block;
+  margin-top:12px;
+  padding:10px 14px;
+  background:#ff3b3b;
+  color:#fff;
+  border-radius:6px;
+  text-decoration:none;
+}
+
+.btn:hover{
+  background:#ff5c5c;
+}
+
+/* DEAL BOX */
+.deal-box{
+  background:#1c1c1c;
+  padding:12px;
+  margin:10px 0;
+  border-left:5px solid #ff3b3b;
+}
+
+/* FORM */
+input, textarea{
+  width:100%;
+  padding:10px;
+  margin:6px 0;
+  border-radius:8px;
+  border:1px solid #555;
+  background:#111;
+  color:#fff;
+}
+
+/* FOOTER */
+footer{
+  background:#000;
+  padding:14px;
+  text-align:center;
+}
+/* ---------- MOBILE RESPONSIVE CSS ---------- */
+@media screen and (max-width:768px){
+  /* Header adjustments */
+  header{
+    flex-direction: column;
+    text-align: center;
+    padding:12px 20px;
+  }
+
+  nav{
+    margin-top:10px;
+  }
+
+  nav a{
+    display: block;
+    margin:6px 0;
+  }
+
+  /* Slider adjustments */
+  .slider{
+    height:250px;
+  }
+
+  .slider img{
+    height:250px;
+  }
+
+  /* Food cards */
+  .food-card img{
+    height:200px;
+  }
+
+  /* Sections */
+  section{
+    padding:20px 15px;
+  }
+
+  /* Buttons */
+  .btn{
+    width:100%;
+    text-align:center;
+    margin-top:10px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">🍕 Pizza Hut</div>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#deals">Deals</a>
+    <a href="#order">Order</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+
+<!-- HOME / SLIDER -->
+<div id="home" class="slider">
+  <img class="active" src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80">
+  <img src="https://images.unsplash.com/photo-1601924582971-6eec6b3c7b4e?auto=format&fit=crop&w=1200&q=80">
+  <img src="https://images.unsplash.com/photo-1600628422019-9b2c2aaff1d2?auto=format&fit=crop&w=1200&q=80">
+</div>
+
+
+<!-- MENU SECTION -->
+<section id="menu">
+<h2>🔥 Our Special Pizzas</h2>
+
+<div class="food-container">
+
+  <div class="food-card">
+    <h3>Pepperoni Pizza</h3>
+    <img src="https://images.pexels.com/photos/803290/pexels-photo-803290.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Pepperoni Pizza">
+
+  </div>
+
+  <div class="food-card">
+    <h3>Chicken Tikka Pizza</h3>
+    <img src="https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Grilled Chicken Pizza">
+
+    <p>Spicy grilled tikka topping.</p>
+  </div>
+
+  <div class="food-card">
+    <h3>BBQ Chicken Pizza</h3>
+    <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65?auto=format&fit=crop&w=900&q=80">
+    <p>Smoky BBQ chicken flavor.</p>
+  </div>
+
+</div>
+
+<a class="btn" href="#order">Order Now</a>
+</section>
+
+
+<!-- DEALS SECTION -->
+<section id="deals">
+<h2>🎉 Special Deals</h2>
+
+<div class="deal-box">🍕 Buy 1 Get 1 Free — Every Friday</div>
+<div class="deal-box">👨‍👩‍👧 Family Combo — 2 Large + Drinks</div>
+<div class="deal-box">🎓 Student Deal — Medium Pizza + Drink</div>
+
+</section>
+
+
+<!-- ORDER SECTION -->
+<section id="order">
+<h2>🛒 Place Your Order</h2>
+
+<input type="text" placeholder="Enter Your Name">
+<input type="text" placeholder="Enter Phone Number">
+<input type="text" placeholder="Enter Delivery Address">
+
+<a class="btn" href="#contact">Confirm Order</a>
+</section>
+
+
+<!-- CONTACT SECTION -->
+<section id="contact">
+<h2>📞 Contact Us</h2>
+
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Email">
+<textarea rows="4" placeholder="Message"></textarea>
+
+<a class="btn" href="#home">Send Message</a>
+</section>
+
+
+<footer>
+  © 2026 Pizza Hut — All Rights Reserved
+</footer>
+
+
+<!-- SLIDER SCRIPT -->
+<script>
+let index = 0;
+const slides = document.querySelectorAll(".slider img");
+
+setInterval(()=>{
+  slides[index].classList.remove("active");
+  index = (index + 1) % slides.length;
+  slides[index].classList.add("active");
+},3000);
+</script>
+
+</body>
+</html>
